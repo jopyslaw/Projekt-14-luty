@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+#youtube-video {
+  display: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -12,10 +16,48 @@ body {
 }
 
 .second-container {
+  margin-top: 100px;
+  transform: rotate(45deg); /* Obrót serca */
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.second-container::before,
+.second-container::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -20;
+}
+
+.second-container::before {
+  top: -250px;
+  left: 0;
+  z-index: -20;
+}
+
+.second-container::after {
+  left: -250px;
+  top: 0;
+  z-index: -20;
+}
+
+.heart {
+  transform: rotate(-45deg); /* Obrót serca */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
 }
 
 .text {
@@ -25,29 +67,82 @@ body {
 }
 
 .buttons {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 80px;
 }
 
 .button {
+  position: relative;
+  width: 80px; /* Rozmiar przycisku */
+  height: 80px;
+  background-color: red;
   border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: rotate(-45deg); /* Obrót przycisku, aby uzyskać kształt serca */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Wyśrodkowanie tekstu */
+  overflow: visible; /* Ważne dla widoczności pseudo-elementów */
 }
 
+.button .button-text {
+  position: absolute;
+  transform: rotate(45deg); /* Obrót tekstu w przeciwną stronę do przycisku */
+  color: white; /* Kolor tekstu */
+  font-weight: bold; /* Pogrubienie tekstu */
+  font-size: 14px; /* Zwiększenie rozmiaru czcionki */
+  text-transform: uppercase; /* Duże litery */
+}
+
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  width: 80px; /* Rozmiar okręgów */
+  height: 80px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.button::before {
+  top: -40px;
+  left: 0;
+  z-index: -20;
+}
+
+.button::after {
+  left: 40px;
+  top: 0;
+  z-index: -20;
+}
+
+/* Kolory dla różnych przycisków */
 .button-yes {
   background-color: rgb(255, 118, 141);
 }
 
+.button-yes::before,
+.button-yes::after {
+  background-color: rgb(255, 118, 141);
+}
+
 .button-no {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  position: relative;
+  background-color: black;
+}
+
+.button-no::before,
+.button-no::after {
+  background-color: black;
+}
+
+.dancing-script-my {
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
 }

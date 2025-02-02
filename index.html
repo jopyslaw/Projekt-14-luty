@@ -5,19 +5,30 @@
     <title>Walentynka</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div id="youtube-video"></div>
     <div class="container">
       <div class="second-container">
-        <div class="image">
-          <img src="img/kotel.jpg" alt="kotel" height="300" width="auto" />
-        </div>
-        <div class="text">Zostaniesz moją walentynką ?????</div>
-        <div class="buttons">
-          <button type="button" id="yes" class="button button-yes">TAK</button>
-          <button type="button" disabled id="no" class="button button-no">
-            NIE
-          </button>
+        <div class="heart">
+          <div class="image">
+            <img src="img/kotel.jpg" alt="kotel" height="300" width="auto" />
+          </div>
+          <div class="text">Zostaniesz moją walentynką ?</div>
+          <div class="buttons">
+            <button type="button" id="yes" class="button button-yes">
+              <span class="button-text">TAK</span>
+            </button>
+            <button type="button" disabled id="no" class="button button-no">
+              <span class="button-text">NIE</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
